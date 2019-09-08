@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+# TCP Client for Object Flow Detection
 import socket
 import numpy as np
 import cv2
 import queue, threading, time
 import pickle
 import sys
-# THISIS A TEST
+
 class VideoCaptureBuffer:
 
   def __init__(self, name):
