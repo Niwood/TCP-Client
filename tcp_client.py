@@ -5,7 +5,7 @@ import cv2
 import queue, threading, time
 import pickle
 import sys
-
+# THISIS A TEST
 class VideoCaptureBuffer:
 
   def __init__(self, name):
@@ -55,8 +55,8 @@ class TCP_client:
             except:
                 #print('Could not connect to server on', self.HOST, 'PORT:',self.PORT,'. Tries:',tries)
                 tries+=1
-                
-            
+
+
     def send_shortMSG(self, type = None):
         if type == 'packet_size':
             sample_packet = self.send_longMSG(get_packet_size = True)
