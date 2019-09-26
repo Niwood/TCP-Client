@@ -6,7 +6,6 @@ import numpy as np
 import cv2
 import queue, threading, time
 import pickle
-import math
 
 class VideoCaptureBuffer:
 
