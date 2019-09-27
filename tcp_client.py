@@ -53,7 +53,7 @@ class TCP_client:
             self.client.connect((self.HOST, self.PORT))
             print('Connection to server established')
         except:
-            print('Could not connect to server on', self.HOST, 'PORT:',self.PORT,'. Tries:',tries)
+            print('Could not connect to server on', self.HOST, 'PORT:',self.PORT)
 
 
     def send_shortMSG(self, type = None):
