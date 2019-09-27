@@ -111,7 +111,7 @@ class TCP_client:
 # Specify the HOST and PORT used by server
 # HOST = '127.0.0.1'
 HOST = '10.0.0.3'
-HOST = '127.0.1.1'
+# HOST = '127.0.1.1'
 PORT = 65433
 
 # Specify how many frames the client should send
