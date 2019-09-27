@@ -48,19 +48,12 @@ class TCP_client:
 
     def connect_to_server(self):
         print('Connecting to', self.HOST, 'on PORT', self.PORT)
-        tries = 0
-        while True:
-            tries += 1
-            try:
-                self.client.connect((self.HOST, self.PORT))
-                print('Connection to server established')
-                break
-                if tries >= 100000:
-                    print('Could not connect to server on', self.HOST, 'PORT:',self.PORT,'. Tries:',tries)
-                    quit()
-            except:
-                #print('Could not connect to server on', self.HOST, 'PORT:',self.PORT,'. Tries:',tries)
-                pass
+        try:
+            self.client.settimeout(10)
+            self.client.connect((self.HOST, self.PORT))
+            print('Connection to server established')
+        except:
+            print('Could not connect to server on', self.HOST, 'PORT:',self.PORT,'. Tries:',tries)
 
 
     def send_shortMSG(self, type = None):
@@ -117,6 +110,7 @@ class TCP_client:
 # Specify the HOST and PORT used by server
 # HOST = '127.0.0.1'
 HOST = '10.0.0.3'
+HOST = '127.0.1.1'
 PORT = 65433
 
 # Specify how many frames the client should send
