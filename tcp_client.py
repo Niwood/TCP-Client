@@ -47,15 +47,18 @@ class TCP_client:
         self.cam = VideoCaptureBuffer(0)
 
     def connect_to_server(self):
+        print(socket.gethostbyname('BlackPanther-Linux.local'))
         print('Connecting to', self.HOST, 'on PORT', self.PORT)
-        try:
-            self.client.settimeout(10)
-            self.client.connect((self.HOST, self.PORT))
-            print('Connection to server established')
-        except Exception as e:
-            print(e)
-            print('Could not connect to server on', self.HOST, 'PORT:',self.PORT)
-
+        while True:
+            try:
+                # self.client.settimeout(10)
+                self.client.connect((self.HOST, self.PORT))
+                print('Connection to server established')
+                break
+            except Exception as e:
+                # print(e)
+                # print('Could not connect to server on', self.HOST, 'PORT:',self.PORT)
+                pass
 
     def send_shortMSG(self, type = None):
         if type == 'packet_size':
@@ -110,9 +113,10 @@ class TCP_client:
 
 # Specify the HOST and PORT used by server
 # HOST = '127.0.0.1'
-HOST = '10.0.0.2'
+HOST = '10.0.0.3'
 # HOST = '127.0.1.1'
-PORT = 65433
+# HOST = 'BlackPanther-Linux'
+PORT = 65432
 
 # Specify how many frames the client should send
 ITERATIONS = 0
