@@ -47,13 +47,16 @@ class TCP_client:
         self.cam = VideoCaptureBuffer(0)
 
     def connect_to_server(self):
-        print('Connecting to', self.HOST)
+        print('Connecting to', self.HOST, 'on PORT', self.PORT)
         tries = 1
         while True:
             try:
                 self.client.connect((self.HOST, self.PORT))
                 print('Connection to server established')
                 break
+                if tries >= 100000:
+                    print('Could not connect to server on', self.HOST, 'PORT:',self.PORT,'. Tries:',tries)
+                    quit()
             except:
                 #print('Could not connect to server on', self.HOST, 'PORT:',self.PORT,'. Tries:',tries)
                 tries+=1
