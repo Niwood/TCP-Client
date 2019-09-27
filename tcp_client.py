@@ -48,8 +48,9 @@ class TCP_client:
 
     def connect_to_server(self):
         print('Connecting to', self.HOST, 'on PORT', self.PORT)
-        tries = 1
+        tries = 0
         while True:
+            tries += 1
             try:
                 self.client.connect((self.HOST, self.PORT))
                 print('Connection to server established')
@@ -59,7 +60,7 @@ class TCP_client:
                     quit()
             except:
                 #print('Could not connect to server on', self.HOST, 'PORT:',self.PORT,'. Tries:',tries)
-                tries+=1
+                pass
 
 
     def send_shortMSG(self, type = None):
