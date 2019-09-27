@@ -52,7 +52,8 @@ class TCP_client:
             self.client.settimeout(10)
             self.client.connect((self.HOST, self.PORT))
             print('Connection to server established')
-        except:
+        except Exception as e:
+            print(e)
             print('Could not connect to server on', self.HOST, 'PORT:',self.PORT)
 
 
