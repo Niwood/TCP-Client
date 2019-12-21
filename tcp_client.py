@@ -47,7 +47,7 @@ class TCP_client:
         self.cam = VideoCaptureBuffer(0)
 
     def connect_to_server(self):
-        print(socket.gethostbyname('BlackPanther-Linux.local'))
+        # print(socket.gethostbyname('Robins-Pro'))
         print('Connecting to', self.HOST, 'on PORT', self.PORT)
         while True:
             try:
@@ -113,7 +113,7 @@ class TCP_client:
 
 # Specify the HOST and PORT used by server
 # HOST = '127.0.0.1'
-# HOST = '10.0.0.9'
+# HOST = '10.0.0.3'
 # HOST = '127.0.1.1'
 HOST = 'BlackPanther-Linux'
 PORT = 65433
