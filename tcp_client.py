@@ -113,9 +113,9 @@ class TCP_client:
 
 # Specify the HOST and PORT used by server
 # HOST = '127.0.0.1'
-HOST = '10.0.0.2'
+# HOST = '10.0.0.9'
 # HOST = '127.0.1.1'
-# HOST = 'BlackPanther-Linux'
+HOST = 'BlackPanther-Linux'
 PORT = 65433
 
 # Specify how many frames the client should send
