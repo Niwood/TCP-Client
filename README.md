@@ -1,2 +1,3 @@
 # TCP-Client
-TCP client for Object Flow Tracking
+A custom TCP protocol. 
+Client for Object Flow Tracking
